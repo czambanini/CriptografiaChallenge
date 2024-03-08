@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>yourLOCK | Criptografe seu texto</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <header>
+            <img src="imgs/Logo.png" width="170px" alt="Logo do site escrito 'yourLock'"/>
+        </header>
+        <main>
+            <section class="main__inputtexto">
+                <input class="campoDeTexto" type='text' name='campoInput' value="Digite seu texto">
+                
+                <div class="main__inputtexto__botoes">
+                    <p class="disclaimer">Apenas letras minúsculas e sem acento.</p>
+                    <button onclick="botaoCriptografar()" class="botao-criptografar">Criptografar</button>
+                    <button onclick="botaoDescriptografar()" class="botao-descriptografar">Descriptografar</button>
+                </div>
+            </section>
+            <section class="main__outputtexto">
+                <div class="main__outputtexto_default">
+                    <img src="imgs/LogoSherlock.png" alt="Imagem simplificada de um cap e cachimbo de detetive" width="270"/>
+                    <h3>Nenhuma mensagem encontrada</h3>
+                    <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+                </div>
+                <div class="main__outputtexto_comTexto"><p>teste</p></div>
+                
+            </section>
+        </main>
+        <footer>
+            
+        </footer>
+
+        <script src="app.js" defer></script>
+    </body>
+
+</html>

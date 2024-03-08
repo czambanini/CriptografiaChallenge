@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@100..900&display=swap');
+
+:root {
+    --cor-fundo: #E8E2DD;
+    --cor-destaque: #85585D;
+    --cor-clara: #DFD3C3;
+    --cor-media: #D0B8A8;
+    --cor-escura: #98887D;
+
+    --fonte-principal: "Inter", sans-serif;
+    --fonte-destaque: "Cousine", monospace;
+}
+
+body {
+    box-sizing: border-box; /* garante que nada dentro dele saia pela lateral*/
+    height: 99vh; /* adapta a largura a largura da tela */
+    background-color: var(--cor-fundo);
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
+    color: var(--cor-escura);
+}
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+header {
+    margin-left: 56px;
+    margin-top: 5px;
+    height: 0;
+}
+
+main {
+    display: flex;
+    align-items: top;
+    justify-content: baseline;
+    height: 100%;
+    margin-left: 240px;
+    margin-right: 40px;
+    gap: 80px;
+}
+
+.main__inputtexto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 600px;
+    margin-top: 175px;
+    margin-bottom: 72px;
+}
+
+.campoDeTexto {
+    border: 0;
+    background-color: transparent;
+    width: 100%;
+    resize: vertical;
+    font-family: var(--fonte-destaque);
+    font-size: 2rem;
+    color: var(--cor-destaque);
+    line-height: 150%;
+    vertical-align: text-top;
+}
+
+.campoDeTexto:focus {
+    outline: none;
+}
+
+.main__inputtexto__botoes{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.disclaimer {
+    text-align: left;
+    font-size: 0.75rem;
+    line-height: 150%;
+    flex-basis: 100%;
+}
+
+.botao-criptografar {
+    border: 0;
+    width: 48%;
+    background-color: var(--cor-destaque);
+    color: white;
+    border-radius: 24px;
+    padding: 24px 0px;
+    margin: 1px;
+    text-align: center;
+}
+
+.botao-descriptografar {
+    width: 48%;
+    color: var(--cor-destaque);
+    background-color: transparent;
+    border: solid 1px;
+    border-radius: 24px;
+    border-color: var(--cor-destaque);
+    padding: 24px 0px;
+    margin: 1px;
+    text-align: center;
+}
+
+.main__outputtexto {
+    border-radius: 32px;
+    text-align: center;
+    background-color: white;
+    margin-top: 40px;
+    width: 400px;
+    padding: 32px;
+    margin-bottom: 40px;
+    filter: drop-shadow(0 5px 8px #dbd4cf);
+}
+
+.main__outputtexto_default {
+    display: block;
+}
+
+.main__outputtexto_comTexto {
+    font-size: 1.5em;
+    line-height: 150%;
+
+    display: none;
+}
+
+@media (min-width: 1500px){
+    main {
+        width: 1300px;
+    }
+
+    .main__outputtexto {
+        width: 500px;
+    }
+
+}
+
+@media (max-width: 1100px) {
+
+main {
+    flex-direction: column;
+    margin: 0 40px 40px 40px;
+}
+
+.main__inputtexto {
+    margin-bottom: 0px;
+}
+
+.main__outputtexto {
+    margin-top: 10px;
+    width: auto;
+    margin-bottom: 10px;
+}
+}
+
+@media (max-width: 500px) {
+
+    .botao-criptografar {
+        width: 100%;
+    }
+    
+    .botao-descriptografar {
+        width: 100%;
+    }
+
+
+}
