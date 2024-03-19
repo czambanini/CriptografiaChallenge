@@ -2,7 +2,7 @@
 
 :root {
     --cor-fundo: #E8E2DD;
-    --cor-destaque: #85585D;
+    --cor-destaque: #7e434a;
     --cor-clara: #DFD3C3;
     --cor-media: #D0B8A8;
     --cor-escura: #98887D;
@@ -22,6 +22,10 @@ body {
 
 a {
     text-decoration: none;
+}
+
+p {
+    line-height: 130%;
 }
 
 h3 {
@@ -66,6 +70,7 @@ main {
     color: var(--cor-destaque);
     line-height: 150%;
     vertical-align: text-top;
+    min-height: 100px;
 }
 
 .campoDeTexto:focus {
@@ -89,17 +94,26 @@ main {
 .botao-criptografar {
     border: 0;
     width: 48%;
+    font-size: 16px;
+    letter-spacing: 0.2cap;
     background-color: var(--cor-destaque);
-    color: white;
+    color: var(--cor-fundo);
     border-radius: 24px;
     padding: 24px 0px;
     margin: 1px;
     text-align: center;
 }
 
+.botao-criptografar:hover {
+     background-color: #85585D;
+     letter-spacing: 0.3cap;
+}
+
 .botao-descriptografar {
     width: 48%;
     color: var(--cor-destaque);
+    font-size: 16px;
+    letter-spacing: 0.2cap;
     background-color: transparent;
     border: solid 1px;
     border-radius: 24px;
@@ -108,6 +122,12 @@ main {
     margin: 1px;
     text-align: center;
 }
+
+.botao-descriptografar:hover {
+    background-color: #dfd7d2;
+    letter-spacing: 0.3cap;
+}
+
 
 .main__outputtexto {
     border-radius: 32px;
@@ -121,7 +141,12 @@ main {
 }
 
 .main__outputtexto_default {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .main__outputtexto_comTexto {
@@ -157,7 +182,13 @@ main {
     margin-top: 10px;
     width: auto;
     margin-bottom: 10px;
+    padding: 50px 32px;
 }
+
+.main__outputtexto img{
+    display: none;
+}
+
 }
 
 @media (max-width: 500px) {
@@ -168,6 +199,10 @@ main {
     
     .botao-descriptografar {
         width: 100%;
+    }
+
+    .main__outputtexto h3 {
+        font-size: 1.2rem;
     }
 
 
