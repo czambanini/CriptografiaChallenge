@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@100..900&display=swap');
 
 :root {
-    --cor-fundo: #E8E2DD;
-    --cor-destaque: #7e434a;
+    --cor-destaque: #C0CCF7;
     --cor-clara: #DFD3C3;
     --cor-media: #D0B8A8;
     --cor-escura: #98887D;
@@ -13,11 +12,11 @@
 
 body {
     box-sizing: border-box; /* garante que nada dentro dele saia pela lateral*/
-    height: 99vh; /* adapta a largura a largura da tela */
-    background-color: var(--cor-fundo);
+    height: 100vh; /* adapta a largura a largura da tela */
+    background: linear-gradient(323deg, #1e1d39 0%, rgba(61,75,125,1) 45%, rgba(61,75,125,1) 55%, rgba(30,29,57,1) 100%);
     font-family: var(--fonte-principal);
     font-size: 1rem;
-    color: var(--cor-escura);
+    color: var(--cor-destaque);
 }
 
 a {
@@ -38,8 +37,45 @@ header {
     padding-top: 20px;
     margin-left: 56px;
     margin-top: 5px;
-    height: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 175px;
 }
+
+.header-background-position{
+    perspective: 300px;
+    position: absolute;
+    margin: -150px -50px;
+    z-index: -1;
+}
+
+.header-background {
+    width: 400px;
+    height: 300px;
+    border-radius: 20%;
+    background: rgb(30,29,57);
+    background: linear-gradient(-50deg, rgba(30,29,57,0.5) 20%, rgba(212,141,74,0.4) 40%, rgba(243,198,67, 0.4) 100%);
+    background-size: 100% auto;
+    transform-origin: left;
+    filter: blur(60px) brightness(1.2);
+    animation: example 5s infinite alternate;
+}
+
+@keyframes example {
+    0% {
+        transform: rotate(0deg) rotateY(-20deg) translateZ(0px);
+    }
+    33% {
+        transform: rotate(25deg) rotateY(-30deg) translateZ(0px);
+    }
+    66% {
+        transform: rotate(40deg) rotateY(-30deg) translateZ(-50px);
+    }
+    100% {
+        transform: rotate(60deg) rotateY(-60deg) translateZ(-50px);
+    }
+  }
 
 main {
     display: flex;
@@ -55,23 +91,24 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-    min-height: 600px;
-    margin-top: 175px;
+    min-height: 500px;
     margin-bottom: 72px;
+    margin-top: 175px;
 }
 
 .campoDeTexto {
     border: 0;
-    background-color: transparent;
+    flex: 1;
     width: 100%;
+    background-color: transparent;
     resize: vertical;
     font-family: var(--fonte-destaque);
     font-size: 2rem;
     color: var(--cor-destaque);
-    line-height: 150%;
+    line-height: 140%;
     vertical-align: text-top;
-    min-height: 100px;
 }
 
 .campoDeTexto:focus {
@@ -80,6 +117,7 @@ main {
 
 .main__inputtexto__botoes{
     display: flex;
+    width: 85%;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
@@ -92,53 +130,54 @@ main {
     flex-basis: 100%;
 }
 
-.botao-criptografar {
+button {
     border: 0;
-    width: 48%;
-    font-size: 16px;
-    letter-spacing: 0.2cap;
-    background-color: var(--cor-destaque);
-    color: var(--cor-fundo);
-    border-radius: 24px;
-    padding: 24px 0px;
-    margin: 1px;
-    text-align: center;
+    width: 47%;
+    height: 50px;
+    background-image: linear-gradient(to right, #202031 33%, #3f466d 66%, #FFDB71);
+    background-size: 500%;
+    background-position: center;
+    transition: 2s background-position linear, 1s;
+    color: #C0CCF7;
+    border-radius: 5px;
+    font-weight: 400;
+    font-family: var(--fonte-destaque);
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    z-index: 1;
 }
 
 .botao-criptografar:hover {
-     background-color: #85585D;
-     letter-spacing: 0.3cap;
+    background-position: left;
+    box-shadow: 0 0 10px 0 #1E1D39;
 }
 
-.botao-descriptografar {
-    width: 48%;
-    color: var(--cor-destaque);
-    font-size: 16px;
-    letter-spacing: 0.2cap;
-    background-color: transparent;
-    border: solid 1px;
-    border-radius: 24px;
-    border-color: var(--cor-destaque);
-    padding: 24px 0px;
-    margin: 1px;
-    text-align: center;
+.botao-criptografar:active {
+    background-color: rgba(30, 29, 57, 0.85);
 }
 
 .botao-descriptografar:hover {
-    background-color: #dfd7d2;
-    letter-spacing: 0.3cap;
+    background-position: right;
+    color: #FFFFFF;
+    box-shadow: 0 0 10px 0 #FFDB71;
+}
+
+.botao-descriptografar:active {
+    background-color: #FFC061;
+    color: #FFFFFF;
+    box-shadow: 0 0 10px 0 #FFC061;
 }
 
 
 .main__outputtexto {
-    border-radius: 32px;
+    border-radius: 12px;
     text-align: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.1);
     margin-top: 40px;
     width: 400px;
     padding: 32px;
     margin-bottom: 40px;
-    filter: drop-shadow(0 5px 8px #dbd4cf);
 }
 
 .main__outputtexto_default {
@@ -151,7 +190,8 @@ main {
 }
 
 .main__outputtexto_comTexto {
-    font-size: 1.5em;
+    font-size: 1.3em;
+    font-style: italic;
     line-height: 150%;
     word-break: break-all;
 
@@ -164,26 +204,39 @@ main {
     }
 
     .main__outputtexto {
-        width: 500px;
+        width: 400px;
     }
 
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
+
+
+header {
+    position: relative;
+}
 
 main {
     flex-direction: column;
     margin: 0 40px 40px 40px;
     gap: 40px;
+    align-items: center;
 }
 
 .main__inputtexto {
+    margin-top: 0;
     margin-bottom: 0px;
+    width: 90%;
+}
+
+.main__inputtexto__botoes{
+    display: flex;
+    width: 100%;
 }
 
 .main__outputtexto {
     margin-top: 0px;
-    width: auto;
+    width: 90%;
     margin-bottom: 10px;
     padding: 50px 32px;
 }
@@ -194,7 +247,7 @@ main {
 
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
 
     .botao-criptografar {
         width: 100%;
